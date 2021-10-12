@@ -1,5 +1,6 @@
 package com.example.madassignment2;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -7,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,12 +35,14 @@ import java.nio.charset.StandardCharsets;
 public class AddPhoto extends AppCompatActivity {
     private ImageView picture;
     private Bitmap bitmapImage;
+    private static final int REQUEST_THUMBNAIL = 1;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_photo);
         Button searchButton = (Button) findViewById(R.id.searchPictureButton);
         Button selectPhoto = (Button) findViewById(R.id.selectPictureBtn);
+        Button takePhoto = (Button) findViewById(R.id.takePictureButton);
         EditText search = (EditText) findViewById(R.id.searchEditText);
         picture = (ImageView) findViewById(R.id.picureId2);
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +77,25 @@ public class AddPhoto extends AppCompatActivity {
                 }
             }
         });
+        takePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent photo = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(photo, REQUEST_THUMBNAIL);
+            }
+        });
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent resultIntent) {
+        super.onActivityResult(requestCode, resultCode, resultIntent);
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_THUMBNAIL) {
+            Bitmap image = (Bitmap) resultIntent.getExtras().get("data");
+            bitmapImage = image;
+            picture.setImageBitmap(image);
+        }
+    }
+
     private String downloadToString(HttpURLConnection conn) {
         String data = null;
         try {
