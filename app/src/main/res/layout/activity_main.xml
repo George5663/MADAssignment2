@@ -17,4 +17,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.109" />
 
+    <Button
+        android:id="@+id/importStudentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Import Student from Contacts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/viewAllStudents"
+        app:layout_constraintStart_toStartOf="@+id/viewAllStudents"
+        app:layout_constraintTop_toBottomOf="@+id/viewAllStudents"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/viewAllStudents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="View Students"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/regStudentButton"
+        app:layout_constraintStart_toStartOf="@+id/regStudentButton"
+        app:layout_constraintTop_toBottomOf="@+id/regStudentButton"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

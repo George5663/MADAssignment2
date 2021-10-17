@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/activity_main.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/add_photo.xml" value="0.28804347826086957" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/photo_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/register_student.xml" value="0.25" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/row_layout_student.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/view_search_result.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/view_students.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/fordo/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/register_student.xml" value="0.4" />
       </map>
     </option>
