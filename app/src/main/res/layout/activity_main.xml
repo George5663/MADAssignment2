@@ -10,12 +10,13 @@
         android:id="@+id/regStudentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Register Student"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/importStudentBtn"
@@ -23,11 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Import Student from Contacts"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/viewAllStudents"
         app:layout_constraintStart_toStartOf="@+id/viewAllStudents"
-        app:layout_constraintTop_toBottomOf="@+id/viewAllStudents"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/viewAllStudents" />
 
     <Button
         android:id="@+id/viewAllStudents"
@@ -35,10 +34,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="View Students"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/regStudentButton"
         app:layout_constraintStart_toStartOf="@+id/regStudentButton"
-        app:layout_constraintTop_toBottomOf="@+id/regStudentButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/regStudentButton" />
+
+    <Button
+        android:id="@+id/mathTestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Math Test"
+        app:layout_constraintEnd_toEndOf="@+id/importStudentBtn"
+        app:layout_constraintStart_toStartOf="@+id/importStudentBtn"
+        app:layout_constraintTop_toBottomOf="@+id/importStudentBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

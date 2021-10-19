@@ -1,7 +1,11 @@
 package com.example.madassignment2;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.madassignment2.Database.Student;
 import com.example.madassignment2.Database.StudentList;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +59,22 @@ public class ViewStudent extends AppCompatActivity implements ViewStudentsAdapte
         bundle.putString("lastName", tempStudent.getLastName());
         bundle.putString("email", tempStudent.getEmail());
         bundle.putInt("phoneNumber", tempStudent.getPhoneNumber());
-        bundle.putString("picture", tempStudent.getStudentPicture());
+
+        String pictureString = tempStudent.getStudentPicture();
+        Bitmap tempImage;
+        byte[] b = Base64.decode(pictureString, Base64.DEFAULT);
+        tempImage = BitmapFactory.decodeByteArray(b, 0, b.length);
+        try {
+
+            String filename = "studentImage.png";
+            FileOutputStream stream = getApplicationContext().openFileOutput(filename, Context.MODE_PRIVATE);
+            tempImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            stream.close();
+            tempImage.recycle();
+            bundle.putString("filename", filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         i.putExtras(bundle);
         startActivity(i);
         //Toast.makeText(this, "You Clicked " + adapter.getItem(position).getTitle(), Toast.LENGTH_LONG).show();

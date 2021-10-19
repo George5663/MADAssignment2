@@ -5,9 +5,15 @@
       <map>
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/activity_main.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/add_photo.xml" value="0.28804347826086957" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/fragment_four_or_more_answers.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/fragment_one_answer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/fragment_single_answer.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/fragment_three_answers.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/fragment_two_answers.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/photo_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/register_student.xml" value="0.25" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/row_layout_student.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/test_question.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/view_search_result.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/George Skyrme/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/view_students.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/fordo/AndroidStudioProjects/MADAssignment2/app/src/main/res/layout/register_student.xml" value="0.4" />

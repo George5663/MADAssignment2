@@ -23,6 +23,7 @@
         <activity android:name=".RegisterStudent"/>
         <activity android:name=".ViewStudent"/>
         <activity android:name=".SearchStudents"/>
+        <activity android:name=".MathTest"/>
     </application>
 
 </manifest>

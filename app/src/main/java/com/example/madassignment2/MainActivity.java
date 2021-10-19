@@ -3,7 +3,6 @@ package com.example.madassignment2;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -24,8 +23,6 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class MainActivity extends AppCompatActivity {
     private final int REQUEST_CONTACT = 1;
@@ -43,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Button registerStudent = (Button) findViewById(R.id.regStudentButton);
         Button viewStudents = (Button) findViewById(R.id.viewAllStudents);
         Button importStudent = (Button) findViewById(R.id.importStudentBtn);
+        Button mathTest = (Button) findViewById(R.id.mathTestBtn);
         registerStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_PICK);
                 i.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
                 startActivityForResult(i, REQUEST_CONTACT);
+            }
+        });
+        mathTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MathTest.class);
+                startActivity(i);
             }
         });
     }

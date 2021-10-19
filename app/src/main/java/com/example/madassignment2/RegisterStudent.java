@@ -42,6 +42,7 @@ public class RegisterStudent extends AppCompatActivity {
         ImageView picture = (ImageView) findViewById(R.id.picureId);
         Button addStudent = (Button) findViewById(R.id.addStudent);
         Button editStudent = (Button) findViewById(R.id.editStudent);
+        Button deleteStudent = (Button) findViewById(R.id.deleteStudent);
         EditText lName = (EditText) findViewById(R.id.studentLName);
         EditText fName = (EditText) findViewById(R.id.studentFName);
         EditText phoneNumber = (EditText) findViewById(R.id.studentPhoneNumber);
@@ -49,18 +50,45 @@ public class RegisterStudent extends AppCompatActivity {
         //Email Verification
         Pattern pattern = Pattern.compile(regex);
         if ((extras = getIntent().getExtras()) != null) {
-            pictureString = extras.getString("image");
-            try {
-                FileInputStream is = this.openFileInput(pictureString);
-                imageBitmap = BitmapFactory.decodeStream(is);
-                is.close();
-                picture.setImageBitmap(imageBitmap);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+            if(extras.getString("image") != null) {
+                pictureString = extras.getString("image");
+                try {
+                    FileInputStream is = this.openFileInput(pictureString);
+                    imageBitmap = BitmapFactory.decodeStream(is);
+                    is.close();
+                    picture.setImageBitmap(imageBitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(extras.getString("firstName") != null)
+            {
+                fName.setText(extras.getString("firstName"));
+                lName.setText(extras.getString("lastName"));
+                email.setText(extras.getString("email"));
+                phoneNumber.setText(String.valueOf(extras.getInt("phoneNumber")));
+                try {
+                    pictureString = extras.getString("filename");
+                    FileInputStream is = this.openFileInput(pictureString);
+                    imageBitmap = BitmapFactory.decodeStream(is);
+                    is.close();
+                    picture.setImageBitmap(imageBitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
+
+        deleteStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!fName.getText().toString().matches("") && !lName.getText().toString().matches("") && !email.getText().toString().matches("") && !phoneNumber.getText().toString().matches("") && !(picture.getDrawable() == null)) {
+                    Toast.makeText(getApplicationContext(), list.remove(new Student(fName.getText().toString(), lName.getText().toString(), email.getText().toString(), Integer.parseInt(phoneNumber.getText().toString()), bitmapToString())), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "You're missing values", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         loadImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -131,4 +131,15 @@
         app:layout_constraintTop_toBottomOf="@+id/picureId"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/deleteStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Delete Student"
+        app:layout_constraintEnd_toEndOf="@+id/editStudent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/addStudent"
+        app:layout_constraintTop_toBottomOf="@+id/picureId" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
